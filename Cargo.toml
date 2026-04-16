@@ -3,7 +3,7 @@ name = "mc_schem"
 version = "1.1.3"
 edition = "2021"
 authors = ["Joseph <tokinobug@163.com>"]
-rust-version = "1.75"
+rust-version = "1.85"
 description = "A library to read, create, modify and write various Minecraft schematic files"
 readme = "README.md"
 homepage = "https://github.com/SlopeCraft/mc_schem"
@@ -15,6 +15,7 @@ categories = ["game-development"]
 include = ["/src", "/tests", "/docs", "/c_sources", "/cmake", "/CMakeLists.txt"]
 
 [features]
+wasm = ["dep:getrandom"]
 ffi = []
 
 # Example of customizing the library in Cargo.toml.
@@ -45,3 +46,4 @@ walkdir = "2.4.0"
 regex = "1.10.3"
 rayon = "1.9.0"
 serde = { version = "1.0.198", features = ["derive"] }
+getrandom = { version = "0.2", features = ["js"], optional = true }

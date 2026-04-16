@@ -170,6 +170,7 @@ impl FilesInMemory {
         return Ok(result);
     }
 
+    #[cfg(not(target_arch = "wasm32"))]
     pub fn from_7z_file(path: impl AsRef<Path> + std::fmt::Display, password: &str) -> Result<FilesInMemory, Error> {
         let filename = path.to_string();
         let szr = match SevenZReader::open(path, sevenz_rust::Password::from(password)) {
