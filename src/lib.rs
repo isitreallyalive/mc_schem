@@ -54,6 +54,7 @@ pub mod schem;
 
 pub mod world;
 
+#[cfg(all(feature = "ffi", not(target_arch = "wasm32")))]
 mod c_ffi;
 mod biome;
 mod raid;
